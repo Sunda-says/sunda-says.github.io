@@ -1,443 +1,704 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sunda Says | Shayari & Thoughts</title>
-<meta name="description" content="Sunda Says — original shayari, thoughts and quotes by Nikhil Sunda.">
-<meta name="author" content="Nikhil Sunda">
-<meta name="theme-color" content="#08080a">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500&display=swap');
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#08080a;
-  color:#f5f5f5;
-  font-family:Inter,sans-serif;
-  overflow-x:hidden;
-}
-
-body::before{
-  content:"";
-  position:fixed;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.06),transparent 70%);
-  top:-250px;
-  left:-200px;
-  pointer-events:none;
-  z-index:-1;
-}
-
-body::after{
-  content:"";
-  position:fixed;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.035),transparent 70%);
-  right:-250px;
-  bottom:-250px;
-  pointer-events:none;
-  z-index:-1;
-}
-
-/* NAVBAR */
-
-nav{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:100;
-  padding:20px;
-  background:linear-gradient(rgba(8,8,10,.95),rgba(8,8,10,.45),transparent);
-  backdrop-filter:blur(10px);
-}
-
-.nav-inner{
-  max-width:1000px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.brand{
-  font-size:14px;
-  font-weight:600;
-  letter-spacing:3px;
-}
-
-.nav-links{
-  display:flex;
-  gap:25px;
-}
-
-.nav-links a{
-  color:#888;
-  text-decoration:none;
-  font-size:13px;
-  transition:.3s;
-}
-
-.nav-links a:hover{
-  color:white;
-}
-
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:120px 20px 80px;
-  position:relative;
-}
-
-.hero-content{
-  max-width:850px;
-  animation:fadeUp 1.2s ease;
-}
-
-.eyebrow{
-  color:#666;
-  font-size:11px;
-  letter-spacing:6px;
-  text-transform:uppercase;
-  margin-bottom:28px;
-}
-
-.hero h1{
-  font-family:"DM Serif Display","Noto Serif Devanagari",serif;
-  font-size:clamp(75px,17vw,155px);
-  font-weight:400;
-  line-height:.95;
-  letter-spacing:-5px;
-  background:linear-gradient(180deg,#fff 10%,#777 100%);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.hero-text{
-  margin-top:35px;
-  color:#999;
-  font-family:"Noto Serif Devanagari",serif;
-  font-size:19px;
-  line-height:2;
-}
-
-.scroll{
-  position:absolute;
-  bottom:35px;
-  color:#555;
-  font-size:10px;
-  letter-spacing:5px;
-  animation:bounce 2s infinite;
-}
-
-/* SECTIONS */
-
-section{
-  max-width:950px;
-  margin:auto;
-  padding:100px 20px;
-}
-
-.section-label{
-  color:#666;
-  font-size:10px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-}
-
-.section-title{
-  margin-top:8px;
-  font-family:"DM Serif Display",serif;
-  font-size:44px;
-  font-weight:400;
-}
-
-/* SEARCH */
-
-.search-box{
-  margin-top:40px;
-}
-
-.search-box input{
-  width:100%;
-  padding:17px 20px;
-  background:#0e0e11;
-  border:1px solid #25252c;
-  border-radius:14px;
-  outline:none;
-  color:white;
-  font-size:14px;
-}
-
-.search-box input:focus{
-  border-color:#555;
-}
-
-.search-box input::placeholder{
-  color:#666;
-}
-
-/* FILTERS */
-
-.filters{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:20px 0 35px;
-}
-
-.filter{
-  background:transparent;
-  border:1px solid #28282e;
-  color:#888;
-  padding:10px 17px;
-  border-radius:50px;
-  cursor:pointer;
-  font-size:12px;
-  transition:.3s;
-}
-
-.filter:hover,
-.filter.active{
-  background:#eee;
-  color:#111;
-  border-color:#eee;
-}
-
-/* POETRY CARD */
-
-.poetry-card{
-  position:relative;
-  background:linear-gradient(145deg,#131316,#0d0d10);
-  border:1px solid #25252c;
-  border-radius:20px;
-  padding:35px;
-  margin-bottom:22px;
-  overflow:hidden;
-  transition:.35s;
-}
-
-.poetry-card::before{
-  content:"“";
-  position:absolute;
-  right:20px;
-  top:-25px;
-  font-family:Georgia,serif;
-  font-size:140px;
-  color:rgba(255,255,255,.025);
-  pointer-events:none;
-}
-
-.poetry-card:hover{
-  transform:translateY(-5px);
-  border-color:#3c3c45;
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
-}
-
-.tag{
-  display:inline-block;
-  color:#666;
-  font-size:10px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  margin-bottom:20px;
-}
-
-.poetry{
-  position:relative;
-  font-family:"Noto Serif Devanagari",serif;
-  font-size:23px;
-  line-height:2;
-  color:#eee;
-}
-
-.author{
-  margin-top:25px;
-  color:#777;
-  font-size:12px;
-  text-align:right;
-}
-
-/* ACTIONS */
-
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-top:25px;
-}
-
-.action-btn{
-  background:#0d0d10;
-  border:1px solid #292930;
-  color:#888;
-  padding:9px 14px;
-  border-radius:50px;
-  font-size:12px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.action-btn:hover{
-  color:white;
-  border-color:#555;
-}
-
-.action-btn.liked{
-  color:white;
-  border-color:#777;
-}
-
-/* ABOUT */
-
-.about-box{
-  margin-top:35px;
-  padding:45px 0;
-  border-top:1px solid #25252c;
-  border-bottom:1px solid #25252c;
-}
-
-.about-box p{
-  max-width:760px;
-  color:#aaa;
-  font-family:"Noto Serif Devanagari",serif;
-  font-size:18px;
-  line-height:2;
-}
-
-/* SOCIAL */
-
-.socials{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:30px;
-}
-
-.social{
-  text-decoration:none;
-  color:#999;
-  border:1px solid #292930;
-  padding:11px 18px;
-  border-radius:50px;
-  font-size:12px;
-  transition:.3s;
-}
-
-.social:hover{
-  color:white;
-  border-color:#555;
-}
-
-/* FOOTER */
-
-footer{
-  border-top:1px solid #202025;
-  text-align:center;
-  padding:50px 20px;
-  color:#555;
-  font-size:12px;
-  line-height:1.8;
-}
-
-footer strong{
-  color:#888;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes bounce{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(8px)}
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-  nav{
-    padding:17px 15px;
-  }
-
-  .brand{
-    font-size:12px;
-    letter-spacing:2.5px;
-  }
-
-  .nav-links{
-    gap:14px;
-  }
-
-  .nav-links a{
-    font-size:11px;
-  }
-
-  .hero{
-    min-height:92vh;
-  }
-
-  .hero h1{
-    font-size:82px;
-    letter-spacing:-4px;
-  }
-
-  .hero-text{
-    font-size:17px;
-  }
-
-  section{
-    padding:75px 17px;
-  }
-
-  .section-title{
-    font-size:36px;
-  }
-
-  .poetry-card{
-    padding:27px 21px;
-    border-radius:17px;
-  }
-
-  .poetry{
-    font-size:19px;
-    line-height:2;
-  }
-
-  .about-box p{
-    font-size:17px;
-  }
-}
-
-@media(max-width:
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>अल्फ़ाज़ | Sunda Says — Shayari, Thoughts & Quotes</title>
+
+  <meta name="description" content="अल्फ़ाज़ — Sunda Says पर पढ़िए मौलिक हिंदी शायरी, विचार और कोट्स। शब्दों में एहसास, सोच और कहानियाँ।">
+  <meta name="author" content="Nikhil Sunda">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://sunda-says.github.io/">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #08090b;
+      color: #eeeeee;
+      font-family: Georgia, "Noto Serif Devanagari", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 7%;
+      background: rgba(8,9,11,.88);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #17191d;
+    }
+
+    .logo {
+      font-family: Arial, sans-serif;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-family: Arial, sans-serif;
+      color: #85858a;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        radial-gradient(circle at 50% 45%, #17181c 0%, #0b0c0f 38%, #08090b 70%);
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      letter-spacing: 9px;
+      font-size: 12px;
+      color: #66676c;
+      margin-bottom: 35px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(75px, 17vw, 155px);
+      font-weight: 500;
+      letter-spacing: -7px;
+      line-height: .9;
+      margin-bottom: 32px;
+    }
+
+    .hero p {
+      color: #a4a4a8;
+      font-size: 20px;
+      max-width: 520px;
+    }
+
+    .scroll {
+      margin-top: 90px;
+      color: #55565b;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 7px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 110px 25px;
+    }
+
+    .section-label {
+      color: #62636a;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(42px, 7vw, 70px);
+      font-weight: 500;
+      margin-bottom: 45px;
+    }
+
+    .tools {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-bottom: 45px;
+    }
+
+    #search {
+      width: 100%;
+      padding: 20px 22px;
+      border-radius: 15px;
+      border: 1px solid #282a2f;
+      background: #101114;
+      color: white;
+      outline: none;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    #search:focus {
+      border-color: #55565b;
+    }
+
+    .filters {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .filter {
+      border: 1px solid #292b30;
+      background: transparent;
+      color: #999aa0;
+      padding: 11px 22px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .filter.active,
+    .filter:hover {
+      background: #eeeeee;
+      color: #111216;
+    }
+
+    #poetry-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .poetry-card {
+      position: relative;
+      padding: 40px 35px 70px;
+      border: 1px solid #202227;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #111216, #0c0d10);
+      transition: .3s;
+    }
+
+    .poetry-card:hover {
+      transform: translateY(-3px);
+      border-color: #383a40;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      color: #777980;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .poetry {
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 2;
+      color: #f0f0f0;
+      padding-right: 20px;
+    }
+
+    .author {
+      margin-top: 28px;
+      color: #777980;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .like-btn {
+      position: absolute;
+      right: 25px;
+      bottom: 23px;
+      border: 1px solid #292b30;
+      background: #0b0c0f;
+      color: #888990;
+      border-radius: 50px;
+      padding: 9px 15px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .like-btn.liked {
+      color: #ffffff;
+      border-color: #777980;
+    }
+
+    .about-box {
+      border-top: 1px solid #25272b;
+      border-bottom: 1px solid #25272b;
+      padding: 55px 0;
+    }
+
+    .about-box p {
+      color: #b0b0b4;
+      font-size: 21px;
+      max-width: 800px;
+      line-height: 2;
+    }
+
+    .socials {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .social {
+      border: 1px solid #292b30;
+      padding: 12px 25px;
+      border-radius: 40px;
+      color: #999aa0;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .social:hover {
+      color: white;
+      border-color: #66676c;
+    }
+
+    footer {
+      border-top: 1px solid #202227;
+      text-align: center;
+      padding: 55px 20px;
+      color: #55565b;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: #777980;
+    }
+
+    .empty {
+      color: #66676c;
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+    }
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 20px 18px;
+      }
+
+      .logo {
+        font-size: 16px;
+        letter-spacing: 3px;
+      }
+
+      .nav-links {
+        gap: 18px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero h1 {
+        font-size: 82px;
+        letter-spacing: -5px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 80px 17px;
+      }
+
+      h2 {
+        font-size: 42px;
+      }
+
+      .poetry-card {
+        padding: 30px 22px 70px;
+      }
+
+      .poetry {
+        font-size: 19px;
+        line-height: 2;
+        padding-right: 0;
+      }
+
+      .about-box p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+
+    <div class="logo">SUNDA_SAYS</div>
+
+    <div class="nav-links">
+      <a href="#words">Words</a>
+      <a href="#about">About</a>
+    </div>
+
+  </nav>
+
+
+  <header class="hero">
+
+    <div class="eyebrow">
+      A PLACE FOR THOUGHTS
+    </div>
+
+    <h1>अल्फ़ाज़</h1>
+
+    <p>
+      कुछ बातें कही नहीं जातीं,<br>
+      बस लिख दी जाती हैं।
+    </p>
+
+    <div class="scroll">
+      SCROLL ↓
+    </div>
+
+  </header>
+
+
+  <section id="words">
+
+    <div class="section-label">
+      01 / WRITING
+    </div>
+
+    <h2>
+      Latest Words
+    </h2>
+
+    <div class="tools">
+
+      <input
+        type="search"
+        id="search"
+        placeholder="Search words..."
+        oninput="renderPoems()"
+      >
+
+      <div class="filters">
+
+        <button
+          class="filter active"
+          onclick="setCategory('All', this)"
+        >
+          All
+        </button>
+
+        <button
+          class="filter"
+          onclick="setCategory('Shayari', this)"
+        >
+          Shayari
+        </button>
+
+        <button
+          class="filter"
+          onclick="setCategory('Thoughts', this)"
+        >
+          Thoughts
+        </button>
+
+        <button
+          class="filter"
+          onclick="setCategory('Quotes', this)"
+        >
+          Quotes
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div id="poetry-list"></div>
+
+  </section>
+
+
+  <section id="about">
+
+    <div class="section-label">
+      02 / THE WRITER
+    </div>
+
+    <h2>
+      About
+    </h2>
+
+    <div class="about-box">
+
+      <p>
+        अल्फ़ाज़ एक ऐसी जगह है जहाँ ख़यालों को शब्द मिलते हैं।
+        यहाँ लिखी हर बात एक एहसास, एक सोच और एक कहानी अपने साथ रखती है।
+        कुछ बातें कही नहीं जातीं, मगर उन्हें लिख देना ज़रूरी होता है।
+      </p>
+
+      <div class="socials">
+
+        <a
+          class="social"
+          href="#"
+          target="_blank"
+        >
+          Instagram
+        </a>
+
+        <a
+          class="social"
+          href="#"
+          target="_blank"
+        >
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    © 2026 <strong>अल्फ़ाज़</strong>
+    · Written by Nikhil Sunda
+
+  </footer>
+
+
+  <script>
+
+    const poems = [
+
+      {
+        id: 1,
+        category: "Shayari",
+        text: "सारे शख़्स अपनी शख़्सियत दिखाने में लगे थे,<br>मैं अपने ज़िंदा होने के सबूत ढूँढ रहा था...",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 2,
+        category: "Shayari",
+        text: "हमने ख़ामोशी को भी एक हुनर बना लिया,<br>जो समझना था उन्हें, वो बिना कहे समझ आ गया।",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 3,
+        category: "Thoughts",
+        text: "कुछ रास्ते मंज़िल तक नहीं ले जाते,<br>मगर इंसान को ख़ुद तक ज़रूर ले आते हैं।",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 4,
+        category: "Quotes",
+        text: "हर जवाब ज़ुबान से देना ज़रूरी नहीं,<br>कभी-कभी वक़्त भी हमारी तरफ़ से बोलता है।",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 5,
+        category: "Shayari",
+        text: "जिसे पढ़कर कोई मुस्कुरा दे,<br>ऐसा एक लफ़्ज़ लिखना भी बड़ी बात है।",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 6,
+        category: "Thoughts",
+        text: "कभी-कभी इंसान अकेला नहीं होता,<br>बस उसकी बातें समझने वाला कोई नहीं होता।",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 7,
+        category: "Quotes",
+        text: "वक़्त ने एक बात सिखाई है,<br>हर अपना हमेशा अपना नहीं रहता।",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 8,
+        category: "Shayari",
+        text: "काग़ज़ पर उतरे हुए कुछ लफ़्ज़,<br>दिल में छुपी पूरी कहानी कह जाते हैं।",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 9,
+        category: "Thoughts",
+        text: "जो बात दिल को छू जाए,<br>उसके लिए लंबी कहानी की ज़रूरत नहीं होती।",
+        author: "Written by Nikhil Sunda"
+      },
+
+      {
+        id: 10,
+        category: "Quotes",
+        text: "ख़ुद को समझने में उम्र लग सकती है,<br>इसलिए दूसरों की राय में ख़ुद को मत ढूँढो।",
+        author: "Written by Nikhil Sunda"
+      }
+
+    ];
+
+
+    let currentCategory = "All";
+
+
+    function getLikes() {
+
+      return JSON.parse(
+        localStorage.getItem("alfazLikes") || "{}"
+      );
+
+    }
+
+
+    function toggleLike(id) {
+
+      const likes = getLikes();
+
+      likes[id] = !likes[id];
+
+      localStorage.setItem(
+        "alfazLikes",
+        JSON.stringify(likes)
+      );
+
+      renderPoems();
+
+    }
+
+
+    function setCategory(category, button) {
+
+      currentCategory = category;
+
+      document
+        .querySelectorAll(".filter")
+        .forEach(function(btn) {
+
+          btn.classList.remove("active");
+
+        });
+
+      button.classList.add("active");
+
+      renderPoems();
+
+    }
+
+
+    function renderPoems() {
+
+      const list =
+        document.getElementById("poetry-list");
+
+      const search =
+        document
+          .getElementById("search")
+          .value
+          .toLowerCase()
+          .trim();
+
+      const likes = getLikes();
+
+
+      const filtered = poems.filter(function(poem) {
+
+        const categoryMatch =
+          currentCategory === "All" ||
+          poem.category === currentCategory;
+
+
+        const cleanText =
+          poem.text
+            .replace(/<br>/g, " ")
+            .toLowerCase();
+
+
+        const searchMatch =
+          cleanText.includes(search);
+
+
+        return categoryMatch && searchMatch;
+
+      });
+
+
+      if (filtered.length === 0) {
+
+        list.innerHTML =
+          '<div class="empty">कोई अल्फ़ाज़ नहीं मिले...</div>';
+
+        return;
+
+      }
+
+
+      list.innerHTML =
+        filtered.map(function(poem) {
+
+          return `
+
+            <article class="poetry-card">
+
+              <span class="tag">
+                ${poem.category}
+              </span>
+
+              <div class="poetry">
+                ${poem.text}
+              </div>
+
+              <div class="author">
+                — ${poem.author}
+              </div>
+
+              <button
+                class="like-btn ${likes[poem.id] ? "liked" : ""}"
+                onclick="toggleLike(${poem.id})"
+              >
+                ${likes[poem.id] ? "♥ Liked" : "♡ Like"}
+              </button>
+
+            </article>
+
+          `;
+
+        }).join("");
+
+    }
+
+
+    renderPoems();
+
+  </script>
+
+</body>
+        </html>
