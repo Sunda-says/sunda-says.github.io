@@ -1,711 +1,692 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>अल्फ़ाज़ | Sunda Says — Shayari, Thoughts & Quotes</title>
+<title>अल्फ़ाज़ — Words That Stay</title>
 
-  <meta name="description" content="अल्फ़ाज़ — Sunda Says पर पढ़िए मौलिक हिंदी शायरी, विचार और कोट्स। शब्दों में एहसास, सोच और कहानियाँ।">
-  <meta name="author" content="Nikhil Sunda">
-  <meta name="robots" content="index, follow">
+<meta name="description" content="अल्फ़ाज़ — कुछ बातें कही नहीं जातीं, बस लिख दी जाती हैं। Shayari, Thoughts, Quotes और Poems by Nikhil Sunda.">
+<meta name="author" content="Nikhil Sunda">
 
-  <link rel="canonical" href="https://sunda-says.github.io/">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap');
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#08090d;
+    color:#f1f1f1;
+    font-family:Inter,sans-serif;
+    line-height:1.7;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(8,9,13,.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav{
+    max-width:1100px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-weight:700;
+    letter-spacing:1.5px;
+    font-size:18px;
+}
+
+.logo span{
+    opacity:.55;
+}
+
+.nav-links{
+    display:flex;
+    gap:24px;
+    font-size:14px;
+    color:#aaa;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.hero{
+    min-height:78vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-family:"Noto Serif Devanagari",serif;
+    font-size:clamp(58px,12vw,110px);
+    font-weight:600;
+    letter-spacing:-2px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#92959e;
+    font-size:16px;
+}
+
+.hero-line{
+    width:45px;
+    height:1px;
+    background:#555;
+    margin:28px auto;
+}
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.section-title{
+    font-family:"Noto Serif Devanagari",serif;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.section-subtitle{
+    color:#777b85;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.controls{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px 18px;
+    border-radius:12px;
+    border:1px solid #252832;
+    background:#0e1016;
+    color:#fff;
+    outline:none;
+    font-size:15px;
+}
+
+.search-box input:focus{
+    border-color:#454a58;
+}
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.category-btn{
+    border:1px solid #292c35;
+    background:#0e1016;
+    color:#9b9da5;
+    padding:9px 15px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.category-btn:hover{
+    color:#fff;
+    border-color:#50545f;
+}
+
+.category-btn.active{
+    background:#f1f1f1;
+    color:#08090d;
+    border-color:#f1f1f1;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#0e1016;
+    border:1px solid #20232c;
+    border-radius:18px;
+    padding:28px;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    border-color:#343844;
+}
+
+.card-category{
+    display:inline-block;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    color:#777c87;
+    margin-bottom:17px;
+}
+
+.card-text{
+    font-family:"Noto Serif Devanagari",serif;
+    font-size:20px;
+    line-height:2;
+    color:#ededed;
+}
+
+.card-author{
+    margin-top:20px;
+    font-size:12px;
+    color:#666a74;
+}
+
+.card-footer{
+    margin-top:22px;
+    padding-top:16px;
+    border-top:1px solid #1d2028;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.like-btn{
+    border:0;
+    background:none;
+    color:#777b85;
+    cursor:pointer;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.like-btn:hover{
+    color:#fff;
+}
+
+.like-btn.liked{
+    color:#ff6b81;
+}
+
+.empty{
+    display:none;
+    text-align:center;
+    padding:60px 20px;
+    color:#666a74;
+}
+
+.about{
+    max-width:720px;
+}
+
+.about p{
+    color:#999da7;
+    font-family:"Noto Serif Devanagari",serif;
+    font-size:17px;
+    line-height:2;
+}
+
+footer{
+    border-top:1px solid #1b1d24;
+    text-align:center;
+    padding:35px 20px;
+    color:#626671;
+    font-size:12px;
+}
+
+@media(max-width:700px){
+    .nav{
+        padding:16px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .nav-links{
+        gap:14px;
+        font-size:12px;
     }
 
-    body {
-      background: #08090b;
-      color: #eeeeee;
-      font-family: Georgia, "Noto Serif Devanagari", serif;
-      line-height: 1.7;
+    .hero{
+        min-height:68vh;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .hero h1{
+        font-size:64px;
     }
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 7%;
-      background: rgba(8,9,11,.88);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid #17191d;
+    section{
+        padding:60px 16px;
     }
 
-    .logo {
-      font-family: Arial, sans-serif;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: 4px;
+    .grid{
+        grid-template-columns:1fr;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      font-family: Arial, sans-serif;
-      color: #85858a;
-      font-size: 14px;
+    .card{
+        padding:23px;
     }
 
-    .nav-links a:hover {
-      color: white;
+    .card-text{
+        font-size:18px;
     }
-
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 70px 20px;
-      background:
-        radial-gradient(circle at 50% 45%, #17181c 0%, #0b0c0f 38%, #08090b 70%);
-    }
-
-    .eyebrow {
-      font-family: Arial, sans-serif;
-      letter-spacing: 9px;
-      font-size: 12px;
-      color: #66676c;
-      margin-bottom: 35px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(75px, 17vw, 155px);
-      font-weight: 500;
-      letter-spacing: -7px;
-      line-height: .9;
-      margin-bottom: 32px;
-    }
-
-    .hero p {
-      color: #a4a4a8;
-      font-size: 20px;
-      max-width: 520px;
-    }
-
-    .scroll {
-      margin-top: 90px;
-      color: #55565b;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 7px;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 110px 25px;
-    }
-
-    .section-label {
-      color: #62636a;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 6px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-size: clamp(42px, 7vw, 70px);
-      font-weight: 500;
-      margin-bottom: 45px;
-    }
-
-    .tools {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-      margin-bottom: 45px;
-    }
-
-    #search {
-      width: 100%;
-      padding: 20px 22px;
-      border-radius: 15px;
-      border: 1px solid #282a2f;
-      background: #101114;
-      color: white;
-      outline: none;
-      font-size: 16px;
-      font-family: inherit;
-    }
-
-    #search:focus {
-      border-color: #55565b;
-    }
-
-    .filters {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .filter {
-      border: 1px solid #292b30;
-      background: transparent;
-      color: #999aa0;
-      padding: 11px 22px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 14px;
-    }
-
-    .filter.active,
-    .filter:hover {
-      background: #eeeeee;
-      color: #111216;
-    }
-
-    #poetry-list {
-      display: grid;
-      gap: 24px;
-    }
-
-    .poetry-card {
-      position: relative;
-      padding: 40px 35px 70px;
-      border: 1px solid #202227;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #111216, #0c0d10);
-      transition: .3s;
-    }
-
-    .poetry-card:hover {
-      transform: translateY(-3px);
-      border-color: #383a40;
-    }
-
-    .tag {
-      display: inline-block;
-      font-family: Arial, sans-serif;
-      color: #777980;
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
-
-    .poetry {
-      font-size: clamp(20px, 3vw, 28px);
-      line-height: 2;
-      color: #f0f0f0;
-      padding-right: 20px;
-    }
-
-    .author {
-      margin-top: 28px;
-      color: #777980;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    .like-btn {
-      position: absolute;
-      right: 25px;
-      bottom: 23px;
-      border: 1px solid #292b30;
-      background: #0b0c0f;
-      color: #888990;
-      border-radius: 50px;
-      padding: 9px 15px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .like-btn.liked {
-      color: #ffffff;
-      border-color: #777980;
-    }
-
-    .about-box {
-      border-top: 1px solid #25272b;
-      border-bottom: 1px solid #25272b;
-      padding: 55px 0;
-    }
-
-    .about-box p {
-      color: #b0b0b4;
-      font-size: 21px;
-      max-width: 800px;
-      line-height: 2;
-    }
-
-    .socials {
-      display: flex;
-      gap: 15px;
-      margin-top: 35px;
-    }
-
-    .social {
-      border: 1px solid #292b30;
-      padding: 12px 25px;
-      border-radius: 40px;
-      color: #999aa0;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-    }
-
-    .social:hover {
-      color: white;
-      border-color: #66676c;
-    }
-
-    footer {
-      border-top: 1px solid #202227;
-      text-align: center;
-      padding: 55px 20px;
-      color: #55565b;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-    }
-
-    footer strong {
-      color: #777980;
-    }
-
-    .empty {
-      color: #66676c;
-      text-align: center;
-      padding: 50px;
-      font-family: Arial, sans-serif;
-    }
-
-    @media (max-width: 600px) {
-
-      nav {
-        padding: 20px 18px;
-      }
-
-      .logo {
-        font-size: 16px;
-        letter-spacing: 3px;
-      }
-
-      .nav-links {
-        gap: 18px;
-        font-size: 12px;
-      }
-
-      .hero {
-        min-height: 90vh;
-      }
-
-      .hero h1 {
-        font-size: 82px;
-        letter-spacing: -5px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      section {
-        padding: 80px 17px;
-      }
-
-      h2 {
-        font-size: 42px;
-      }
-
-      .poetry-card {
-        padding: 30px 22px 70px;
-      }
-
-      .poetry {
-        font-size: 19px;
-        line-height: 2;
-        padding-right: 0;
-      }
-
-      .about-box p {
-        font-size: 17px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
+<header>
+    <nav class="nav">
+        <a href="#" class="logo">SUNDA<span>_SAYS</span></a>
 
-    <div class="logo">SUNDA_SAYS</div>
+        <div class="nav-links">
+            <a href="#writing">Words</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+</header>
 
-    <div class="nav-links">
-      <a href="#words">Words</a>
-      <a href="#about">About</a>
+<main>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>अल्फ़ाज़</h1>
+
+        <div class="hero-line"></div>
+
+        <p>कुछ बातें कही नहीं जातीं,<br>
+        बस लिख दी जाती हैं।</p>
+
     </div>
+</section>
 
-  </nav>
 
+<section id="writing">
 
-  <header class="hero">
+    <h2 class="section-title">मेरे अल्फ़ाज़</h2>
 
-    <div class="eyebrow">
-      A PLACE FOR THOUGHTS
-    </div>
-
-    <h1>अल्फ़ाज़</h1>
-
-    <p>
-      कुछ बातें कही नहीं जातीं,<br>
-      बस लिख दी जाती हैं।
+    <p class="section-subtitle">
+        जो महसूस हुआ, वो लिख दिया।
     </p>
 
-    <div class="scroll">
-      SCROLL ↓
-    </div>
+    <div class="controls">
 
-  </header>
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="कुछ खोजें..."
+                oninput="renderPoems()"
+            >
+        </div>
 
+        <div class="categories">
 
-  <section id="words">
+            <button class="category-btn active"
+                    onclick="setCategory('All',this)">
+                All
+            </button>
 
-    <div class="section-label">
-      01 / WRITING
-    </div>
+            <button class="category-btn"
+                    onclick="setCategory('Shayari',this)">
+                Shayari
+            </button>
 
-    <h2>
-      Latest Words
-    </h2>
+            <button class="category-btn"
+                    onclick="setCategory('Thoughts',this)">
+                Thoughts
+            </button>
 
-    <div class="tools">
+            <button class="category-btn"
+                    onclick="setCategory('Quotes',this)">
+                Quotes
+            </button>
 
-      <input
-        type="search"
-        id="search"
-        placeholder="Search words..."
-        oninput="renderPoems()"
-      >
+            <button class="category-btn"
+                    onclick="setCategory('Poems',this)">
+                Poems
+            </button>
 
-      <div class="filters">
-
-        <button
-          class="filter active"
-          onclick="setCategory('All', this)"
-        >
-          All
-        </button>
-
-        <button
-          class="filter"
-          onclick="setCategory('Shayari', this)"
-        >
-          Shayari
-        </button>
-
-        <button
-          class="filter"
-          onclick="setCategory('Thoughts', this)"
-        >
-          Thoughts
-        </button>
-
-        <button
-          class="filter"
-          onclick="setCategory('Quotes', this)"
-        >
-          Quotes
-        </button>
-
-      </div>
-
+        </div>
     </div>
 
 
-    <div id="poetry-list"></div>
+    <div class="grid" id="poemGrid"></div>
 
-  </section>
-
-
-  <section id="about">
-
-    <div class="section-label">
-      02 / THE WRITER
+    <div class="empty" id="emptyMessage">
+        कुछ नहीं मिला...
     </div>
 
-    <h2>
-      About
-    </h2>
+</section>
 
-    <div class="about-box">
 
-      <p>
-        अल्फ़ाज़ एक ऐसी जगह है जहाँ ख़यालों को शब्द मिलते हैं।
-        यहाँ लिखी हर बात एक एहसास, एक सोच और एक कहानी अपने साथ रखती है।
-        कुछ बातें कही नहीं जातीं, मगर उन्हें लिख देना ज़रूरी होता है।
-      </p>
+<section id="about">
 
-      <div class="socials">
+    <div class="about">
 
-        <a
-          class="social"
-          href="#"
-          target="_blank"
-        >
-          Instagram
-        </a>
+        <h2 class="section-title">About</h2>
 
-        <a
-          class="social"
-          href="#"
-          target="_blank"
-        >
-          YouTube
-        </a>
-
-      </div>
+        <p>
+            अल्फ़ाज़ उन एहसासों की जगह है,
+            जिन्हें बोलना आसान नहीं होता।
+            यहाँ हर शब्द किसी एहसास,
+            किसी सवाल या किसी खामोशी से निकला है।
+            <br><br>
+            — Nikhil Sunda
+        </p>
 
     </div>
 
-  </section>
+</section>
+
+</main>
 
 
-  <footer>
-
-    © 2026 <strong>अल्फ़ाज़</strong>
-    · Written by Nikhil Sunda
-
-  </footer>
+<footer>
+    © 2026 अल्फ़ाज़ · Written by Nikhil Sunda · All rights reserved.
+</footer>
 
 
-  <script>
+<script>
 
-    const poems = [
+const poems = [
 
-      {
-        id: 1,
-        category: "Shayari",
-        text: "सारे शख़्स अपनी शख़्सियत दिखाने में लगे थे,<br>मैं अपने ज़िंदा होने के सबूत ढूँढ रहा था...",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:1,
+        category:"Shayari",
+        text:"कुछ रिश्ते नाम के मोहताज नहीं होते,<br>कुछ लोग पास होकर भी पास नहीं होते।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 2,
-        category: "Shayari",
-        text: "हमने ख़ामोशी को भी एक हुनर बना लिया,<br>जो समझना था उन्हें, वो बिना कहे समझ आ गया।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:2,
+        category:"Thoughts",
+        text:"खामोशी भी एक जवाब है,<br>बस उसे समझने वाला चाहिए।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 3,
-        category: "Thoughts",
-        text: "कुछ रास्ते मंज़िल तक नहीं ले जाते,<br>मगर इंसान को ख़ुद तक ज़रूर ले आते हैं।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:3,
+        category:"Quotes",
+        text:"वक़्त बदलता नहीं,<br>बस हमें बदल देता है।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 4,
-        category: "Quotes",
-        text: "हर जवाब ज़ुबान से देना ज़रूरी नहीं,<br>कभी-कभी वक़्त भी हमारी तरफ़ से बोलता है।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:4,
+        category:"Shayari",
+        text:"कुछ बातें दिल में रह जाएँ,<br>तो अल्फ़ाज़ बन जाती हैं।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 5,
-        category: "Shayari",
-        text: "जिसे पढ़कर कोई मुस्कुरा दे,<br>ऐसा एक लफ़्ज़ लिखना भी बड़ी बात है।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:5,
+        category:"Thoughts",
+        text:"हर सवाल का जवाब मिल जाए,<br>तो ज़िंदगी शायद इतनी खूबसूरत न रहे।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 6,
-        category: "Thoughts",
-        text: "कभी-कभी इंसान अकेला नहीं होता,<br>बस उसकी बातें समझने वाला कोई नहीं होता।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:6,
+        category:"Quotes",
+        text:"जिसे खोने का डर था,<br>वही सबसे पहले खो गया।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 7,
-        category: "Quotes",
-        text: "वक़्त ने एक बात सिखाई है,<br>हर अपना हमेशा अपना नहीं रहता।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:7,
+        category:"Shayari",
+        text:"हमने मुस्कुराना सीख लिया,<br>वरना दर्द तो आज भी वही है।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 8,
-        category: "Shayari",
-        text: "काग़ज़ पर उतरे हुए कुछ लफ़्ज़,<br>दिल में छुपी पूरी कहानी कह जाते हैं।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:8,
+        category:"Thoughts",
+        text:"कभी-कभी खुद से मिलना भी<br>दुनिया से मिलने जितना मुश्किल होता है।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 9,
-        category: "Thoughts",
-        text: "जो बात दिल को छू जाए,<br>उसके लिए लंबी कहानी की ज़रूरत नहीं होती।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:9,
+        category:"Quotes",
+        text:"कुछ सफ़र मंज़िल के लिए नहीं,<br>खुद को पाने के लिए होते हैं।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 10,
-        category: "Quotes",
-        text: "ख़ुद को समझने में उम्र लग सकती है,<br>इसलिए दूसरों की राय में ख़ुद को मत ढूँढो।",
-        author: "Written by Nikhil Sunda"
-      },
+    {
+        id:10,
+        category:"Shayari",
+        text:"जो दिल में उतर जाए,<br>उसे अल्फ़ाज़ों की ज़रूरत नहीं होती।",
+        author:"Written by Nikhil Sunda"
+    },
 
-      {
-        id: 11,
-        category: "Shayari",
-        text: "अल्फ़ाज़ ख़ामोश हैं,<br>पर आँखें सब कह रही हैं,<br>दिल में जो बात दबी है,<br>वो धड़कनें कह रही हैं। 🖤",
-        author: "Written by Nikhil Sunda"
-      }
+    {
+        id:11,
+        category:"Shayari",
+        text:"अल्फ़ाज़ ख़ामोश हैं,<br>पर आँखें सब कह रही हैं,<br>दिल में जो बात दबी है,<br>वो धड़कनें कह रही हैं। 🖤",
+        author:"Written by Nikhil Sunda"
+    },
 
-    ];
+    {
+        id:12,
+        category:"Poems",
+        title:"काश…",
+        text:
+        "काश उस वक़्त मुझे ये हुनर आया होता,<br>" +
+        "कि हर आवाज़ को सच मानना ज़रूरी नहीं होता।<br>" +
+        "हर मुस्कुराता चेहरा अपना नहीं होता,<br>" +
+        "और हर ख़ामोशी का मतलब हार नहीं होता।<br><br>" +
 
+        "काश मैंने भीड़ में खुद को ढूँढने के बजाय,<br>" +
+        "कभी अकेले बैठकर खुद को पढ़ा होता।<br>" +
+        "जो बातें दुनिया ने मेरे बारे में लिखीं,<br>" +
+        "उनके नीचे अपना नाम मिटाया होता।<br><br>" +
 
-    let currentCategory = "All";
+        "कुछ रास्ते मेरे लिए बने ही नहीं थे,<br>" +
+        "कुछ दरवाज़े खुलने के इंतज़ार में नहीं थे।<br>" +
+        "मैं उम्र भर दस्तक देता रहा वहाँ,<br>" +
+        "जहाँ मेरे लिए रास्ते थे ही नहीं।<br><br>" +
 
+        "काश गिरने को मैंने अंत न समझा होता,<br>" +
+        "और ठोकरों को थोड़ा सबक माना होता।<br>" +
+        "जो रातें मुझे अपनी लगती थीं कभी,<br>" +
+        "उन्हीं रातों में अपना सवेरा बनाया होता।<br><br>" +
 
-    function getLikes() {
+        "मैंने बहुत कुछ पाने की चाह में<br>" +
+        "खुद को ही कहीं पीछे छोड़ दिया,<br>" +
+        "दुनिया को समझने की कोशिश में<br>" +
+        "अपने दिल को समझना ही छोड़ दिया।<br><br>" +
 
-      return JSON.parse(
-        localStorage.getItem("alfazLikes") || "{}"
-      );
+        "अब समझ आया है—<br>" +
+        "ज़िंदगी हमेशा जवाब नहीं देती,<br>" +
+        "कभी-कभी सवाल बनकर भी सिखाती है।<br>" +
+        "और जो चीज़ें हमसे छिन जाती हैं,<br>" +
+        "वही कभी-कभी हमें<br>" +
+        "हमसे मिला जाती हैं।<br><br>" +
 
+        "तो अब कोई शिकायत नहीं,<br>" +
+        "न उन लोगों से, न उन रास्तों से।<br>" +
+        "जो मेरा था, वो मुझे बना गया,<br>" +
+        "जो मेरा नहीं था—<br>" +
+        "वो मुझे खुद तक ले आया।",
+
+        author:"Written by Nikhil Sunda"
     }
 
-
-    function toggleLike(id) {
-
-      const likes = getLikes();
-
-      likes[id] = !likes[id];
-
-      localStorage.setItem(
-        "alfazLikes",
-        JSON.stringify(likes)
-      );
-
-      renderPoems();
-
-    }
+];
 
 
-    function setCategory(category, button) {
-
-      currentCategory = category;
-
-      document
-        .querySelectorAll(".filter")
-        .forEach(function(btn) {
-
-          btn.classList.remove("active");
-
-        });
-
-      button.classList.add("active");
-
-      renderPoems();
-
-    }
+let currentCategory = "All";
 
 
-    function renderPoems() {
-
-      const list =
-        document.getElementById("poetry-list");
-
-      const search =
-        document
-          .getElementById("search")
-          .value
-          .toLowerCase()
-          .trim();
-
-      const likes = getLikes();
+function getLikes(){
+    return JSON.parse(localStorage.getItem("alfazLikes") || "{}");
+}
 
 
-      const filtered = poems.filter(function(poem) {
-
-        const categoryMatch =
-          currentCategory === "All" ||
-          poem.category === currentCategory;
+function saveLikes(likes){
+    localStorage.setItem("alfazLikes", JSON.stringify(likes));
+}
 
 
-        const cleanText =
-          poem.text
-            .replace(/<br>/g, " ")
-            .toLowerCase();
+function toggleLike(id){
 
+    const likes = getLikes();
 
-        const searchMatch =
-          cleanText.includes(search);
+    likes[id] = !likes[id];
 
-
-        return categoryMatch && searchMatch;
-
-      });
-
-
-      if (filtered.length === 0) {
-
-        list.innerHTML =
-          '<div class="empty">कोई अल्फ़ाज़ नहीं मिले...</div>';
-
-        return;
-
-      }
-
-
-      list.innerHTML =
-        filtered.map(function(poem) {
-
-          return `
-
-            <article class="poetry-card">
-
-              <span class="tag">
-                ${poem.category}
-              </span>
-
-              <div class="poetry">
-                ${poem.text}
-              </div>
-
-              <div class="author">
-                — ${poem.author}
-              </div>
-
-              <button
-                class="like-btn ${likes[poem.id] ? "liked" : ""}"
-                onclick="toggleLike(${poem.id})"
-              >
-                ${likes[poem.id] ? "♥ Liked" : "♡ Like"}
-              </button>
-
-            </article>
-
-          `;
-
-        }).join("");
-
-    }
-
+    saveLikes(likes);
 
     renderPoems();
+}
 
-  </script>
+
+function setCategory(category,button){
+
+    currentCategory = category;
+
+    document.querySelectorAll(".category-btn")
+        .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    renderPoems();
+}
+
+
+function renderPoems(){
+
+    const grid = document.getElementById("poemGrid");
+    const empty = document.getElementById("emptyMessage");
+
+    const search =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const likes = getLikes();
+
+    const filtered = poems.filter(poem => {
+
+        const matchesCategory =
+            currentCategory === "All" ||
+            poem.category === currentCategory;
+
+        const plainText =
+            (poem.title || "") + " " +
+            (poem.text || "") + " " +
+            (poem.category || "");
+
+        const matchesSearch =
+            plainText.toLowerCase().includes(search);
+
+        return matchesCategory && matchesSearch;
+    });
+
+
+    grid.innerHTML = "";
+
+
+    if(filtered.length === 0){
+
+        empty.style.display = "block";
+        return;
+
+    }else{
+
+        empty.style.display = "none";
+
+    }
+
+
+    filtered.forEach(poem => {
+
+        const card = document.createElement("article");
+
+        card.className = "card";
+
+        card.innerHTML = `
+
+            <div class="card-category">
+                ${poem.category}
+            </div>
+
+            ${poem.title ? `
+                <h3 style="
+                    font-family:'Noto Serif Devanagari',serif;
+                    font-size:27px;
+                    margin-bottom:18px;
+                    font-weight:600;
+                ">
+                    ${poem.title}
+                </h3>
+            ` : ""}
+
+            <div class="card-text">
+                ${poem.text}
+            </div>
+
+            <div class="card-author">
+                ${poem.author}
+            </div>
+
+            <div class="card-footer">
+
+                <button
+                    class="like-btn ${likes[poem.id] ? "liked" : ""}"
+                    onclick="toggleLike(${poem.id})"
+                >
+                    ${likes[poem.id] ? "♥" : "♡"} Like
+                </button>
+
+            </div>
+        `;
+
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+renderPoems();
+
+</script>
 
 </body>
-  </html>
+          </html>
